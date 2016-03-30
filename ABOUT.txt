@@ -1,0 +1,8 @@
+Author: Eric Zhang
+Version: 1.0
+
+CodeEditor is a simple coding IDE that allows users
+to run Python code on an interpreter as well as
+opening and saving to file. CodeEditor was created as
+an exercise to better understand how to use PyQt to
+make GUI applications.
