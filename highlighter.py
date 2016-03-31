@@ -56,8 +56,13 @@ class HighlightRuleRandomColours(HighlightRule):
         for var in self.var_patterns:
             for match in re.finditer(var, text):
                 start, end = match.span()
+                string = var.pattern
+                if string.startswith(r'\b'):
+                    string = string[2:]
+                if string.endswith(r'\b'):
+                    string = string[:-2]
                 highlighter.setFormat(start, end - start,
-                    self.var_colours[var.pattern.strip(r"\b")])
+                    self.var_colours[string])
 
 
 class Highlighter(QSyntaxHighlighter):
